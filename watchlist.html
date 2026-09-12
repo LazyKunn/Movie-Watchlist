@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Watchlist | BucketList</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imgs/popcorn.ico" type="image/png" />
+</head>
+<body>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <img src="imgs/popcorn.png" alt="Logo" class="brand-icon" />
+      Bucket<span>List</span>
+    </a>
+
+    <div class="topbar-actions">
+      <button id="searchToggle" class="icon-btn" type="button" aria-label="Open search" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M21 21l-4.3-4.3" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <a href="watchlist.html" class="icon-btn" aria-label="Open watchlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 4h12v16l-6-4-6 4V4z" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <button id="profileToggle" class="icon-btn profile-btn" type="button" aria-label="Open profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="8" r="3.4" />
+          <path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Profile Modal -->
+  <div id="profileModalOverlay" class="modal-overlay">
+    <div class="profile-modal">
+      <button id="closeProfileBtn" class="close-modal-btn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      
+      <h2 class="modal-title">Your Profile</h2>
+      
+      <form id="profileForm" class="profile-form">
+        <label for="profileInput">Display Name</label>
+        <input id="profileInput" type="text" placeholder="What should we call you?" maxlength="24" autocomplete="off" />
+        <button type="submit" class="save-btn">Save Changes</button>
+      </form>
+
+      <div class="profile-stats">
+        <p><strong>To Watch:</strong> <span id="watchlistCount">0</span></p>
+        <p><strong>Watching:</strong> <span id="watchingCount">0</span></p>
+        <p><strong>Watched:</strong> <span id="watchedCount">0</span></p>
+      </div>
+
+      <div class="danger-zone">
+        <button id="clearWatchlistBtn" class="danger-btn" type="button">Clear All Lists</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Panel -->
+  <section id="searchPanel" class="search-panel">
+    <div class="search-panel-inner">
+      <h2 class="search-title">What are you watching today?</h2>
+      <form id="searchForm" class="search-form">
+        <input id="searchInput" type="search" placeholder="Search movies and TV shows…" autocomplete="off" />
+        <button type="submit" class="search-submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+      
+      <div class="genre-tags">
+        <button type="button" class="genre-btn" data-id="28">Action</button>
+        <button type="button" class="genre-btn" data-id="35">Comedy</button>
+        <button type="button" class="genre-btn" data-id="18">Drama</button>
+        <button type="button" class="genre-btn" data-id="27">Horror</button>
+        <button type="button" class="genre-btn" data-id="10749">Romance</button>
+        <button type="button" class="genre-btn" data-id="878">Sci-Fi</button>
+        <button type="button" class="genre-btn" data-id="16">Animation</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-shell">
+    <div class="page-heading">
+      <h1>My Lists</h1>
+      <p>Everything you've saved, organized.</p>
+    </div>
+
+    <!-- Section 1: Currently Watching -->
+    <div class="list-section">
+      <h2 class="list-section-title">▶️ Currently Watching</h2>
+      <div id="gridWatching" class="card-grid"></div>
+    </div>
+
+    <!-- Section 2: To Watch -->
+    <div class="list-section">
+      <h2 class="list-section-title">🔖 To Watch</h2>
+      <div id="gridWatchlist" class="card-grid"></div>
+    </div>
+
+    <!-- Section 3: Watched -->
+    <div class="list-section">
+      <h2 class="list-section-title">👁️ Watched</h2>
+      <div id="gridWatched" class="card-grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    BucketList — your personal watchlist · data provided by TMDB
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
