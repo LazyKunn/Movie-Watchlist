@@ -16,4 +16,4 @@ BucketList is a lightweight, cinema-themed personal watchlist web application. I
 * [TMDB API](https://developer.themoviedb.org/docs)
 
 ## Live Demo
-Check out the live version here: https://lazykunn.github.io/Movie-Watchlist/
+Check out the live version here: https://lazykunn.github.io/BucketList/
